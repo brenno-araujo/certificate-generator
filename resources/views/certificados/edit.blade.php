@@ -13,6 +13,6 @@
         <form action="{{route('certificados.update',$certificado->id)}}" class="needs-validation" novalidate method="POST">
             @method('PUT')
          @include('certificados._partials.form')
-            <button class="btn btn-success" type="submit"><i class="fas fa-plus-square"></i> Editar</button>
+            <button class="btn btn-success" type="submit"><i class="fas fa-edit"></i> Confirmar dados</button>
 
 

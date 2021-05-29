@@ -18,10 +18,10 @@ class CertificadoController extends Controller{
 
 //Exibe todos os certificados
 public function index()
-{
-    $certificados = $this->repositorio->paginate();
-    return view('certificados.index',['certificados'=>$certificados]);
-}
+    {
+        $certificados = $this->repositorio->paginate(11);
+        return view('certificados.index',['certificados'=>$certificados]);
+    }
 
 //Requisita a página de criação de formulários
 public function create()
@@ -65,7 +65,9 @@ public function create()
         {
             return redirect()->back();
         }
+
         $certificado->delete();
+
         return redirect()->route('certificados.index')->with('msg',"Certificado do aluno: '$certificado->nome', deletado com sucesso!");
     }
 
@@ -91,6 +93,7 @@ public function create()
         }
 
         view()->share('certificado',$certificado);
+
         $pdf  =  PDF::loadView('certificados/certificado', $certificado)->setPaper('A4', 'landscape');
 
         return $pdf->stream();

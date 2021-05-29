@@ -9,7 +9,6 @@
 
 <div class="card">
 
-
     <div class="card-body">
         <table class="table table-hover">
             <h4>Certificados <a href="{{ route('certificados.create') }}" class="btn btn-success"> <i
@@ -17,8 +16,8 @@
             <thead>
                 <tr>
                     <th scope="col">Nome</th>
-                    <th scope="col">Data de emissão</th>
-                    <th scope="col" width='250'>Opções</th>
+                    <th scope="col">Pais</th>
+                    <th scope="col" width='300'>Opções</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,13 +27,13 @@
                             {{ $certificado->nome }}
                         </td>
                         <td>
-                            {{ $certificado->descricao }}
+                            {{ $certificado->pais }}
                         </td>
                         <td>
                             <div class=" form form-inline">
-                                <a href="{{ route('certificado.gerapdf', $certificado->id) }}" class="btn btn-primary ml-1">Gerar</a>
-                                <a href="{{ route('certificados.show', $certificado->id) }}" class="btn btn-info ml-1">Ver</i></a>
-                                <a href="{{ route('certificados.edit', $certificado->id) }}" class="btn btn-warning ml-1">Editar</i></a>
+                                <a href="{{ route('certificado.gerapdf', $certificado->id) }}"target="_blank" class="btn btn-primary ml-1"><i class="fas fa-file-pdf"></i> Gerar</a>
+                                <a href="{{ route('certificados.show', $certificado->id) }}" class="btn btn-info ml-1"><i class="fas fa-eye"></i> Ver</i></a>
+                                <a href="{{ route('certificados.edit', $certificado->id) }}" class="btn btn-warning ml-1"><i class="fas fa-edit"></i> Editar</i></a>
                             </div>
                         </td>
                     </tr>
@@ -50,7 +49,6 @@
     @else
         <div class="row d-flex justify-content-center modal-footer">
             {!! $certificados->links() !!}
-
         </div>
     @endif
 

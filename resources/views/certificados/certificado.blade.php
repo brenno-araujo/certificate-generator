@@ -357,7 +357,7 @@
                         style="word-spacing:0em;">APRESENTADO AO SENHOR JESUS &nbsp;</span></div>
                 <div class="stl_01 stl_25" style="left:20.8526em;top:32.4505em;"><span class="stl_26 stl_27 stl_13"
                         style="word-spacing:-0em;">CONFORME AS ESCRITURAS NOS ORIENTA. &nbsp;</span></div>
-                <div class="stl_01" style="left:12.9081em;top:34.5719em;"><span class="stl_28 stl_29 stl_16">Pais:
+                <div class="stl_01" style="left:7.9081em;top:34.5719em;"><span class="stl_28 stl_29 stl_16">Pais: {{$certificado->pais}}
                         &nbsp;</span></div>
                 <div class="stl_01" style="left:52.0625em;top:34.5719em;"><span class="stl_28 stl_29 stl_16"
                         style="word-spacing:-0em;">Data e local: &nbsp;</span></div>
