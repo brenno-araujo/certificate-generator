@@ -24,9 +24,9 @@ class StoreUpdateCertificado extends FormRequest
     public function rules()
     {
         return [
-            'nome','required|min:3|max:50',
-            'pais','required|min:3|max:50',
-            'date','date_format:d-m-Y',
+            'nome'=>'required|min:3|max:50',
+            'pais'=>'required|min:3|max:50',
+            'data'=>'required',
         ];
     }
 }

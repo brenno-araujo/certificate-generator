@@ -352,7 +352,7 @@
                 <div class="stl_01" style="top:26.0876em;left:36%;transform: translate(-50%, -50%);"><span class="nome"
                         style="word-spacing:-0em;">{{ $certificado->nome }} &nbsp;</span></div>
                 <div class="stl_01" style="left:27.7204em;top:28.1886em;"><span class="stl_24 stl_08 stl_16"
-                        style="word-spacing:-0em;">Data de Nascimento: {{  $certificado->data}} &nbsp;</span></div>
+                        style="word-spacing:-0em;">Data de Nascimento: {{  $certificado->dataBR()}} &nbsp;</span></div>
                 <div class="stl_01 stl_25" style="left:24.021em;top:30.9212em;"><span class="stl_26 stl_27 stl_13"
                         style="word-spacing:0em;">APRESENTADO AO SENHOR JESUS &nbsp;</span></div>
                 <div class="stl_01 stl_25" style="left:20.8526em;top:32.4505em;"><span class="stl_26 stl_27 stl_13"

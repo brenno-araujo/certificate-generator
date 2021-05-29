@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PdfController;
+use App\Http\Controllers\CertificadoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,7 @@ use App\Http\Controllers\PdfController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('certificado/{id}/pdf', [PdfController::class, 'gerapdf'])->name('certificado.gerapdf');
-Route::resource('certificados', PdfController::class);
+Route::any('/', [CertificadoController::class, 'index'])->name('certificado.index');
+Route::any('certificadoss/pesquisar', [CertificadoController::class, 'search'])->name('certificado.pesquisar');
+Route::get('certificado/{id}/pdf', [CertificadoController::class, 'gerapdf'])->name('certificado.gerapdf');
+Route::resource('certificados', CertificadoController::class);

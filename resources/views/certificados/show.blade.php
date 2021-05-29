@@ -2,7 +2,6 @@
 <nav aria-label="breadcrumb">
 
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('certificados.index') }}">Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{ route('certificados.index') }}">Certificados</a></li>
         <li class="breadcrumb-item active" aria-current="page">Visualizar</li>
     </ol>

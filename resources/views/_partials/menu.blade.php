@@ -3,19 +3,12 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="{{route('certificados.index')}}">BAOS Certificados</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('certificados.create')}}">Emitir Certificado</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Nome do Aluno">
+    <div>
+      <form action="{{route('certificado.pesquisar')}}" class="form-inline my-2 my-lg-0">
+        @csrf
+        <input class="form-control mr-sm-2" type="search" placeholder="Nome do Aluno" name="filtro" value="{{$filtros['filtro'] ?? ''}}">
         <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
       </form>
     </div>
   </nav>
+

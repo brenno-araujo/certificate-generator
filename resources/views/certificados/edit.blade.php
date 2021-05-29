@@ -1,12 +1,11 @@
 @include('_partials.menu')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{route('certificados.index')}}">Dashboard</a></li>
       <li class="breadcrumb-item"><a href="{{route('certificados.index')}}">Certificados</a></li>
       <li class="breadcrumb-item active" aria-current="page">Editar Certificado</li>
     </ol>
   </nav>
-
+  @include('includes.alerts')
 <div class="card">
     <div class="card-body">
         <h4>Editar certificado</h4>

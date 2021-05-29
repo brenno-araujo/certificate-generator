@@ -1,8 +1,7 @@
 @include('_partials.menu')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('certificados.index') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active" aria-current="page">certificados</li>
+        <li class="breadcrumb-item active" aria-current="page">Certificados</li>
     </ol>
 </nav>
 
@@ -18,8 +17,8 @@
             <thead>
                 <tr>
                     <th scope="col">Nome</th>
-                    <th scope="col">Data do certificado</th>
-                    <th scope="col" width='130'>Opções</th>
+                    <th scope="col">Data de emissão</th>
+                    <th scope="col" width='250'>Opções</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,12 +43,12 @@
         </table>
     </div>
     @if (isset($filtros))
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center modal-footer">
             {!! $certificados->appends($filtros)->links() !!}
         </div>
 
     @else
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center modal-footer">
             {!! $certificados->links() !!}
 
         </div>

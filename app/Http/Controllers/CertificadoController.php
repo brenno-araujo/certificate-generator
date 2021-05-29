@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Certificado;
 use PDF;
 use App\Http\Requests\StoreUpdateCertificado;
-class PdfController extends Controller{
+class CertificadoController extends Controller{
 
 
     protected $repositorio;
@@ -53,7 +53,7 @@ public function create()
         {
             return redirect()->back();
         }
-        $certificado->update()->all();
+        $certificado->update($request->all());
         return redirect()->route('certificados.index',['certificado'=>$certificado])->with('msg',"Certificado do aluno: '$certificado->nome', editado com sucesso!");
     }
 
@@ -82,9 +82,6 @@ public function create()
      }
 
 
-
-
-
 //Gera os PDFs em uma nova aba, possibilitando o download do arquivo.
     public function gerapdf($id){
 
@@ -97,5 +94,17 @@ public function create()
         $pdf  =  PDF::loadView('certificados/certificado', $certificado)->setPaper('A4', 'landscape');
 
         return $pdf->stream();
+    }
+
+    //Função que realiza a busca de certificado pelo nome e/ou sobrenome do aluno
+    public function search(Request $request){
+
+        $filtros =  $request->except('_token');
+        $certificados = $this->repositorio->pesquisar($request->filtro);
+
+        return view('certificados.index',[
+            'filtros'=>$filtros,
+            'certificados'=>$certificados,
+        ]);
     }
 }
